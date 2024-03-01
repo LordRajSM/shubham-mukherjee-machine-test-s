@@ -1,0 +1,43 @@
+.mat-elevation-z8 {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff !important;
+    color: #ddd;
+    width: 0px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.mat-tooltip {
+    max-width: 200px;
+}
+
+.app-paginator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
