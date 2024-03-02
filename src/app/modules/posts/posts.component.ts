@@ -18,20 +18,23 @@ export interface IPosts {
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent {
+  loading = false;
   private subscription!: Subscription;
   displayedColumns: string[] = ['id', 'userId', 'title', 'body'];
   dataSource = new MatTableDataSource<IPosts>([]);
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.fetchPosts();
   }
 
   fetchPosts() {
+    this.loading = true;
     this.subscription = this.http
       .get<IPosts[]>('https://jsonplaceholder.typicode.com/posts')
       .subscribe((res: IPosts[]) => {
+        this.loading = false;
         this.dataSource.data = res;
       });
   }
