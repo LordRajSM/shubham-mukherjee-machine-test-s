@@ -17,6 +17,7 @@ export interface ITodos {
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent {
+  loading = false;
   private subscription!: Subscription;
   displayedColumns: string[] = ['id', 'userId', 'title', 'completed'];
   dataSource = new MatTableDataSource<ITodos>([]);
@@ -24,9 +25,15 @@ export class TodoComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.fetchTodos();
+  }
+
+  fetchTodos(){
+    this.loading = true;
     this.subscription = this.http
       .get('https://jsonplaceholder.typicode.com/todos')
       .subscribe((res: any) => {
+        this.loading = false;
         this.dataSource.data = res;
       });
   }
