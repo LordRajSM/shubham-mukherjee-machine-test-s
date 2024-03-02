@@ -30,5 +30,9 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
+  <div class="spinner-container" *ngIf="loading">
+    <mat-spinner class="spinner" diameter="50"></mat-spinner>
+  </div>
+
   <app-paginator [dataSource]="dataSource"></app-paginator>
 </div>
