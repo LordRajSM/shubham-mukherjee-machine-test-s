@@ -10,6 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { SharedModule } from '../shared/shared.module';
 import { TruncateWordsPipe } from '../../pipes/truncate-words.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [PostsComponent, TruncateWordsPipe],
@@ -21,6 +22,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatPaginatorModule,
     SharedModule,
     MatTooltipModule,
+    MatProgressSpinnerModule
   ],
 })
 export class PostsModule {}
